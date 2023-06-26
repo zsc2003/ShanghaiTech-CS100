@@ -1,0 +1,320 @@
+\section{Smart Pointer}
+\subsection{Introduction to Smart Pointer}
+\begin{frame}[fragile]{What is Smart Pointer}
+  \begin{itemize}
+    \item A Smart Pointer is a wrapper class over a pointer intended to make it more easier and safer to manage memory.
+    \item There are two type of Smart Pointer used to manage object:
+      \begin{itemize}
+        \item \textbf{Shared Pointer} (\texttt{std::shared\_ptr})
+        \item \textbf{Unique Pointer} (\texttt{std::unique\_ptr})
+      \end{itemize}
+    \item There is another special type of Smart Pointer:\\
+     \textbf{Weak Pointer}(\texttt{std::weak\_ptr}), which is served as an observer and should not be used alone.\pause
+    \item Smart Pointers are also template. To use Smart Pointers, include \texttt{memory} header file.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Why We Use Smart Pointers}
+  \begin{itemize}
+    \item Dynamic memory management is very error-prone
+    \begin{itemize}
+      \item Forgot to \texttt{delete} memory: Memory Leak
+      \item Dereferencing dangling pointer/wild pointer.
+      \item \texttt{delete} the same memory twice.
+    \end{itemize}\pause
+  \begin{cpp}
+int *p = new int(42); // allocate memory
+auto q = p;           // p and q point 
+                      // to the same memory
+delete p;             // p and q are both
+                      // dangling pointers
+p = nullptr;          // Ok. But q is still 
+                      // dangling pointer
+  \end{cpp}
+  \end{itemize}\pause
+  It would be nice if the memory can be automatically deleted when it is no longer needed.
+\end{frame}
+\subsection{Shared Pointer}
+\begin{frame}{Shared Pointer Introduction}
+  \begin{itemize}
+    \item The owner of the resource is responsible for freeing the memory that was allocated.
+    \item Shared Pointers have the ability of taking ownership of a pointer and share that ownership.
+    \item Share Pointers provide limited garbage-collection based on reference counting.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Declare a Shared Pointer}
+  \begin{cpp}
+shared_ptr<string> p1;      // can point to string.
+shared_ptr<vector<int>> p2; // can point to vector<int>.
+auto p3 = make_shared<double>(3.14);
+// use make_shared to create a shared pointer.
+auto p4(p3);  
+// copy construct. point to p1 and share the ownership.
+shared_ptr<int> p5(new int(42)); 
+// point to a newly allocated int.
+shared_ptr<int> p6 = new int(43);
+// Error: converting from raw pointer to shared pointer 
+// is explicit.
+  \end{cpp}
+\pause
+The safest way to create a shared pointer is to use \texttt{make\_shared}.
+\end{frame}
+\begin{frame}[fragile]{Reference Counting}
+  \begin{itemize}
+    \item When default constructed, the reference count is 0.
+    \item When constructed with a raw pointer, or through \texttt{make\_shared}, the reference count is 1.
+    \item The reference count is increased by 1 when copied.
+    \item When the reference count is decreased to 0, the memory is freed.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Reference Counting}
+  \begin{cpp}
+shared_ptr<double> p1;               // ref-count: 0 
+auto p3 = make_shared<double>(3.14); // ref-count: 1
+auto p4(p3); // ref-count: 2
+p1 = p3;     // ref-count: 3
+p3.reset(new double(2.7)); // reset p3 to a new memory.
+// p3 have ref-count 1. p1 and p4 have ref-count 2
+p4.reset(); // ref-count: 1
+p1.reset(); // ref-count: 0. memory is freed.
+  \end{cpp} 
+\begin{itemize}\pause
+  \item The difference between \texttt{reset()} and assignment operator.
+  \item \texttt{reset()} can accept an object which can be converted into \texttt{shared\_ptr} (e.g. raw pointer)
+  \item assignment operator can only accept \texttt{shared\_ptr}.
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Pass a Deleter}
+  \begin{itemize}
+    \item Sometimes we use creater creater and deleter function to manage an object.\pause
+    \item For example, suppose we are using a network library.
+
+  \end{itemize}
+  \begin{cpp}
+struct destination; // connect to where.
+struct connection;  // the information of the connection.
+connection connect(destination *d); // allocate memory
+void disconnect(connection c); // free the memory.
+void f(destination &d) {
+  connection c = connect(&d);
+  // if we forget to call disconnect()
+  // we will never be able to disconnect c.
+}
+        \end{cpp}
+\end{frame}
+\begin{frame}[fragile]{Pass a Deleter}
+  \begin{itemize}
+    \item We would like our shared pointer to automaticall call \texttt{disconnect()} for us.
+    \begin{cpp}
+void f(destination &d) {
+  connection c = connect(&d);
+  shared_ptr<connection> p(c, disconnect);
+  // p will call disconnect() when it is destroyed.
+  // this is also exception-safe
+}
+    \end{cpp}
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Shared Pointer Pitfalls}
+  Mixing shared pointers and raw pointers is begging for trouble.
+  \begin{cpp}
+void process(shared_ptr<int> ptr) {
+  do_something(ptr);
+} // ptr was destroyed here.
+// If we pass a shared_ptr, the ref-count of ptr 
+// is at least 2. Life is good.
+shared_ptr<int> p(new int(42)); // ref-count 1.
+process(p); // in process, the ref-count is 2.
+int i = *p; // correct, the ref-count is 1.
+  \end{cpp}
+\end{frame}
+\begin{frame}[fragile]{Shared Pointer Pitfalls}
+  Mixing shared pointers and raw pointers is begging for trouble.
+  \begin{cpp}
+void process(shared_ptr<int> ptr) {
+  do_something(ptr);
+} // ptr was destroyed here.
+// Although we can't pass raw pointer directly, 
+// we can create a temporary shared_ptr.
+int *x(new int(1024)); // raw pointer.
+process(x); // Error: Converting from raw pointer 
+            // to shared pointer is explicit.
+process(shared_ptr<int>(x)); 
+// correct, but the memeory will be freed.
+int j = *x; // UB: x is dangling pointer.
+  \end{cpp}
+\end{frame}
+\begin{frame}[fragile]{Shared Pointer Pitfalls}
+\begin{itemize}
+  \item \texttt{get()} returns the raw pointer underlying the shared pointer. You should be careful with this function.
+  \begin{itemize}
+    \item Do not \texttt{delete} the pointer return by \texttt{get()}
+    \item Do not use \texttt{get()} to initialize or \texttt{reset()} another shared pointer.
+    \begin{cpp}
+shared_ptr<int> p1(new int(42)); // ref-count 1
+int *q = p1.get(); 
+{
+  shared_ptr<int> p(q); // ref-count 1
+} // p is destroyed and memory is freed.
+int* i = *q; // UB: q is dangling pointer.
+    \end{cpp}\pause
+  \end{itemize}
+  \item Do not use the same raw pointer to initialize two shared pointers.
+\end{itemize}
+\end{frame}
+
+\subsection{Unique Pointer}
+\begin{frame}{What is a Unique Pointer?}
+  \begin{itemize}
+    \item Same as Shared Pointers, Unique Pointers have the ability of taking ownership of a pointer. 
+    \item However, Unique Pointer do not share its ownership.
+    \item Only one unique pointer can point to an object at the same time.
+    \item When the unique pointer is destroyed, the object is destroyed.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Declare a Unique Pointer}
+  Unique Pointer can be direct initialized or by \texttt{make\_unique}(C++14).
+  \begin{cpp}
+unique_ptr<int> p1(new int(42));  // correct.
+unique_ptr<int> p2(p1); 
+// Error: unique_ptr do not support copy construction.
+unique_ptr<int> p3; // correct. default-constructed.
+p3 = p1; // Error: do not support assignment operator.
+unique_ptr<double> p3 = make_unique<double>(3.14); 
+unique_ptr<int[]> p4 = make_unique<int[]>(10);
+// For array types.
+  \end{cpp}
+\end{frame}
+\begin{frame}[fragile]{Pass a Deleter}
+Just like shared pointers, we can also pass a deleter to unique pointer.
+\begin{cpp}
+void f(destination &d) {
+  connection c = connect(&d);
+  unique_ptr<connection, decltype(disconnect)*> 
+    p(&c, disconnect);
+}
+\end{cpp}
+But the type of the function should be determined at compile time.
+\end{frame}
+\begin{frame}[fragile]{Change the ownership of a Unique Pointer}
+  \begin{itemize}
+    \item unique pointer have a function called \texttt{release()}, which is used to give up the ownership of the pointer.
+    \item \texttt{release()} returns the pointer underlying the unique pointer and set the unique pointer to null.
+    \begin{cpp}
+unique_ptr<int> p1(new int(42)); 
+auto q = p1.release(); 
+// correct. but we have to delete q manually.
+    \end{cpp}\pause
+    \item We can use \texttt{reset()} and \texttt{release()} together to transfer ownership from one unique pointer to another.
+    \begin{cpp}
+unique_ptr<int> p3(new int(42));
+unique_ptr<int> p4;
+p4.reset(p3.release());
+    \end{cpp}
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Return a unique pointer from a function}
+How can we return a unique pointer from a function if it does not support copy?
+\pause
+\\We will return to this problem after we have learnt move semantics.
+\end{frame}
+\subsection{Weak Pointer}
+\begin{frame}{What is Weak Pointer}
+\begin{itemize}
+  \item Different from shared pointers and unique pointers, weak pointers do not have the ability of taking ownership of a pointer.
+  \item Weak pointer should point to a object belongs to a shared pointer, but it does not contribute to the ref-count of the shared pointer.
+  \item Even if the weak pointer points to the object, the object still can be destroyed.
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Observe the Object}
+  \begin{itemize}
+    \item Since weak pointer may point to a object that is already destroyed, we can use \texttt{expired()} to check if the object is still alive.
+    \item For the same reason, we should use \texttt{lock()} to get a shared pointer to the object. 
+    \item Weak pointer is a good way to solve dangling pointer.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Cyclic Dependency}
+  Suppose we have two class:
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+class A {
+  shared_ptr<B> p_; 
+ public:
+  A() {  cout << "A()\n"; }
+  ~A() { cout << "~A()\n"; }
+  void setShared(
+    shared_ptr<B>& p) {
+    p_ = p;
+  }
+};
+      \end{cpp}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+class B {
+  shared_ptr<A> p_;
+ public:
+  B() { cout << "B()\n"; }
+  ~B() { cout << "~B()\n"; }
+  void setShared(
+    shared_ptr<A>& p) {
+    p_ = p;
+  }
+};
+      \end{cpp}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Cyclic Dependency}
+  What is the output of the function:
+  \begin{cpp}
+void cyclic() {
+  shared_ptr<A> a_ptr(new A);
+  shared_ptr<B> b_ptr(new B);
+  a_ptr->setShared(b_ptr);
+  b_ptr->setShared(a_ptr);
+}
+  \end{cpp}\pause
+  \begin{cpp}
+// A()
+// B()
+  \end{cpp}
+  The destructor was not called. There was a memory leak.
+\end{frame}
+
+\begin{frame}[fragile]{Cyclic Dependency}
+  Now we replace the shared pointer with weak pointer.
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+class A {
+  weak_ptr<B> p_; 
+ public:
+  A() { cout << "A()\n"; }
+  ~A() { cout << "~A()\n"; }
+  void setShared(
+    weak_ptr<B> p) { 
+    p_ = p;
+  }
+};
+      \end{cpp}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+class B {
+  weak_ptr<A> sP1;
+ public:
+  B() {  cout << "B()\n"; }
+  ~B() { cout << "~B()\n"; }
+  void setShared(
+    weak_ptr<A> p) {
+    p_ = p;
+  }
+};
+      \end{cpp}
+    \end{column}
+  \end{columns}
+  The problem solved.
+\end{frame}

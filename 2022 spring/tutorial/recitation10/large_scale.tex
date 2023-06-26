@@ -1,0 +1,157 @@
+\section{Large Scale Program}
+\subsection{Program Structure}
+\begin{frame}{Seperate .cpp files}
+  \begin{itemize}
+    \item As the size of the program grows, it takes more and more time to compile.
+    \item It also difficult to understand the overall structure of the program.\pause
+    \item A good way is to seperate the program into different parts. 
+    \item When compiling, we only need to compile the modified parts and then link them together.
+    \item The seperation of the program is also a good way to make the program easier to understand.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Seperate .hpp files}
+  Suppose we have two functions and we want to put them into two different files.
+  \begin{cpp}
+    // A.cpp
+    void do_something() {
+      do_something_else();
+    }
+    // B.cpp
+    void do_something_else() {
+      // do things here...
+    }
+      \end{cpp}
+    But this code will not compile, because in A.cpp, \texttt{do\_something\_else()} is not defined.
+\end{frame}
+
+\begin{frame}[fragile]{Seperate .hpp files}
+  To solve this problem, we can put the declaration into another file, and include it when needed.
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+// A.hpp
+void do_something();
+// A.cpp
+#include "A.hpp"
+#include "B.hpp"
+void do_something() {
+  do_something_else();
+}
+      \end{cpp}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+// B.hpp
+void do_something_else();
+// B.cpp
+#include "B.hpp"
+void do_something_else() {
+  // do things here...
+}
+      \end{cpp}
+    \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}[fragile]{Header Guard}
+  To avoid including the same header file multiple times, we should write header guard in each header file.
+  \begin{cpp}
+// In My_Class.hpp
+#ifndef MY_CLASS_HPP 
+#define MY_CLASS_HPP
+    // ...
+#endif // MY_CLASS_HPP
+  \end{cpp}
+\end{frame}
+\begin{frame}[fragile]{Deal with Templates}
+  What if we want to put the declarations and implementations in different files?\pause 
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+template<typename Tp>
+class Foo{
+ public:
+  Foo(Tp data);
+  void bar();
+ private: 
+  Tp data_;
+}
+#include "foo.inc"
+      \end{cpp}
+      foo.hpp
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{cpp}
+template<typename Tp>
+Foo<Tp>::Foo(Tp data) 
+  : data_(data) {}
+
+template<Typename Tp>
+void Foo<Tp>::bar() {
+  std::cout << data_ 
+            << std::endl;
+}
+      \end{cpp}
+      foo.inc
+    \end{column}
+  \end{columns}
+Include the implementation file at the end of the header file.\\
+\end{frame}
+\subsection{Name Spaces}
+\begin{frame}{What is Name Space}
+  \begin{itemize}
+    \item A namespace is a declarative region that provides a scope to the identifiers (names of the types, function, variables etc.) inside it.
+    \item \texttt{std} is the standard namespace.
+    \item To refer to an identifier in the namespace, use \texttt{::}. (e.g. \texttt{std::vector})
+  \end{itemize}
+\end{frame}
+\begin{frame}{Why we need it}
+  \begin{itemize}
+    \item Namespace provide a method for preventing name conflicts in large projects.
+    \item Do not write \texttt{using namespace} directly, especially not in a header file. This will reintroduce the name conflict into your code. 
+    
+  \end{itemize}
+\end{frame}
+\begin{frame}{The Interface Principle}
+  For a class X, all functions, including free functions, that both
+    \begin{itemize}
+    \item[(a)] "mention" X, and
+    \item[(b)] are "supplied with" X
+    \end{itemize}
+    are logically part of X, because they form part of the interface of X. 
+    \begin{itemize}
+      \item Putting the functions and the classes into the same namespace is a good way to do the seperation. Just like packages in Python.
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Defining a Namespace}
+\begin{columns}
+  \begin{column}{0.5\linewidth}
+    \begin{cpp}
+// declare a namespace
+namespace ShanghaiTech {
+  class SIST_Student {/* */}
+  void debug_programs(SIST_Student &);
+  class SLST_Student {/* */}
+  void write_paper(SLST_Student &);
+  // ...
+}
+   \end{cpp}
+  \end{column}
+  \begin{column}{0.5\linewidth}
+  \begin{cpp}
+#include "ShanghaiTech.hpp"
+// open the namespace
+namespace ShanghaiTech {
+  /* The definations of the classes and functions */
+}
+  \end{cpp}
+  \end{column}
+\end{columns}
+\begin{columns}
+  \begin{column}{0.5\linewidth}
+    ShanghaiTech.hpp
+  \end{column}
+  \begin{column}{0.5\linewidth}
+    ShanghaiTech.cpp
+  \end{column}
+\end{columns}
+\end{frame}

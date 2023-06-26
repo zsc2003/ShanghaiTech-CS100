@@ -1,0 +1,18 @@
+\usepackage{listings, xcolor}
+
+\lstset{
+    columns = fixed,
+    basewidth = {0.5em},
+    % numbers = left,
+    breaklines = true,
+    backgroundcolor = \color{white},
+    keywordstyle = \color[RGB]{40, 40, 255},
+    numberstyle = \footnotesize\color{darkgray},
+    commentstyle = \ttfamily\color{violet},
+    basicstyle = \small\ttfamily,
+    stringstyle = \ttfamily\color[RGB]{128, 0, 0},
+    showstringspaces = false,
+    language = {[11]C++},
+}
+
+\lstnewenvironment{cpp}{\lstset{language = {[11]C++}}}{}

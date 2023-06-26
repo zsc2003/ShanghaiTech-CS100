@@ -1,0 +1,30 @@
+\documentclass{beamer}
+\usetheme{Szeged}
+\usecolortheme{beaver}
+\usepackage{./env/cppenv}
+\usepackage{cprotect}
+
+\title{CS100 Recitation 10}
+\author{Ainsley}
+\date{May 18, 2022}
+
+\AtBeginLecture{
+  \begin{frame}
+    \maketitle
+  \end{frame}
+  \begin{frame}{Contents}
+    \tableofcontents
+  \end{frame}
+}
+
+\AtBeginSubsection{
+    \begin{frame}{Contents}
+        \tableofcontents[currentsection, currentsubsection]
+    \end{frame}
+}
+
+\begin{document}
+\lecture{CS100 Recitation 10}{lect10}
+\include{smart_pointer}
+\include{large_scale}
+\end{document}
