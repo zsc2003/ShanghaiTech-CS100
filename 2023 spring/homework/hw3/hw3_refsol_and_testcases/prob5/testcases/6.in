@@ -1,0 +1,322 @@
+40 21 280
+L R L R R U L U U L D L L L U D R L U L R
+U L L D D L D D U R U R U R D U L R R L R
+D U D R D R L D D L U L R U L R L R R D R
+D D L U R D L L D L L R D R L U U L D D L
+L R R D R U R D L U L D L U R R L R L U R
+D R U D D D L D L D R L U U D L L U R R U
+U D U L R L R R D D D U L L U U U L D L D
+R U R R L D L R U D D D D D L L L D L U R
+R U D U R L D R D L U R L U D D D D U D L
+U U R U L U D D L R U R R R D U R L D R L
+U L D L L L D L U U D R L R D R U D L U D
+R D L D L D R R L L D D L R R R R D R L R
+R L L R R U U D U L U D D L U D U L D U U
+U U R U L R D L L R R U L U R D L R R U L
+L D D R R L D L D L D R R U L D R R R R L
+D L D U R U U L R L U L D D D U D U D U L
+R D L U U D L U L R D D R R U D R L L L R
+D R U R D L D R L R D D L D L U U L L L L
+R D R D U D D R R U U R L L D D U L D U D
+U U L U L D L U D L L D U D L U L D U U L
+L L D R R L R L U U L R U U R U R R U U U
+U U R R L L D D D D L U R U D D R U R D R
+L R U L D R U L D D R U R D R U D D L R D
+D U R D D U D U U R D D L R U D R D D L U
+D U D D D U U R U R U L U R R L R U D U D
+R L L L R R R R U U U R R R L D D D R L L
+R R L U R D U R L L R R D L U D R R U U R
+U U L U L U D R R L L L U U D L U R R L R
+L R D U R U U D R U D D D U D U D U U D D
+U L U R U R L U R L U U U L L D R U U L R
+L D R U D D D R U D D D U L D D L D D D D
+D R D U R R U L U U U L U R U L L D U D L
+D U L R L L U R R R L D L D R U R L U U D
+R L D D U R R U L L R D D U D U D D R R L
+U R R R L D L R L D L R U R U U U U R L L
+L D R R L D R U L R D U D L D U D U U R L
+R R D R U D R U D U L D U L R L R D D U U
+R L U L L L U L D U R R R D D R L L R U D
+L U U R L D L U D D D R L D D R D R L D L
+U D D U L D L R U U D D R U U D R R U R D
+39 1
+Right 37
+Front 1
+Left 8
+Front 6
+Left 11
+Left 2
+Front 2
+Front 1
+Left 5
+Right 1
+Right 26
+Right 18
+Right 3
+Front 6
+Right 2
+Right 6
+Back 6
+Left 5
+Front 23
+Left 5
+Front 7
+Back 1
+Right 20
+Left 11
+Front 35
+Front 11
+Back 6
+Front 16
+Front 1
+Back 6
+Back 7
+Back 1
+Left 4
+Front 8
+Front 26
+Front 1
+Left 2
+Left 2
+Right 1
+Back 12
+Back 5
+Left 31
+Back 7
+Left 13
+Left 10
+Right 1
+Back 3
+Front 7
+Front 9
+Left 6
+Back 3
+Back 1
+Right 2
+Front 5
+Back 11
+Left 12
+Left 36
+Left 19
+Back 12
+Back 5
+Back 15
+Left 2
+Front 14
+Right 16
+Left 2
+Back 8
+Right 4
+Back 2
+Front 10
+Front 13
+Front 6
+Back 9
+Right 3
+Front 5
+Right 3
+Right 7
+Back 12
+Right 1
+Front 1
+Right 3
+Back 19
+Left 10
+Right 7
+Right 11
+Right 5
+Front 4
+Front 31
+Left 7
+Back 11
+Back 2
+Left 1
+Right 1
+Front 16
+Front 7
+Left 2
+Front 4
+Left 6
+Left 12
+Left 14
+Front 2
+Front 9
+Right 9
+Right 3
+Right 5
+Back 10
+Left 15
+Back 4
+Back 1
+Front 14
+Right 2
+Right 14
+Front 6
+Left 6
+Front 1
+Right 5
+Left 17
+Front 8
+Back 4
+Left 15
+Front 2
+Back 3
+Back 3
+Front 13
+Right 5
+Back 4
+Right 5
+Left 1
+Left 12
+Right 3
+Front 3
+Back 13
+Left 1
+Back 7
+Back 6
+Front 14
+Left 1
+Left 1
+Left 2
+Left 3
+Left 23
+Front 4
+Right 5
+Back 1
+Back 2
+Back 16
+Front 2
+Back 13
+Left 6
+Left 19
+Front 4
+Left 1
+Right 3
+Right 5
+Left 2
+Left 36
+Front 6
+Left 3
+Front 1
+Front 33
+Back 15
+Front 4
+Right 1
+Left 6
+Front 16
+Left 15
+Front 8
+Back 17
+Front 17
+Back 8
+Back 11
+Front 3
+Left 9
+Right 15
+Back 9
+Front 2
+Front 2
+Front 3
+Back 3
+Front 3
+Back 33
+Right 5
+Right 2
+Right 6
+Back 3
+Right 5
+Front 13
+Left 27
+Left 1
+Left 5
+Back 12
+Front 30
+Front 5
+Right 6
+Right 3
+Left 11
+Left 8
+Front 1
+Left 1
+Left 2
+Right 1
+Front 2
+Front 3
+Right 2
+Back 7
+Front 2
+Left 6
+Right 1
+Back 5
+Right 2
+Back 2
+Front 2
+Left 35
+Back 1
+Back 36
+Left 2
+Back 2
+Right 6
+Front 20
+Left 12
+Front 3
+Front 1
+Right 4
+Back 1
+Front 17
+Back 9
+Right 36
+Left 28
+Left 6
+Left 1
+Back 1
+Right 22
+Right 4
+Front 3
+Left 8
+Left 5
+Back 2
+Right 19
+Back 3
+Front 3
+Back 2
+Left 4
+Front 1
+Front 1
+Right 6
+Right 2
+Front 5
+Right 11
+Left 2
+Left 1
+Left 6
+Left 7
+Back 5
+Back 13
+Front 17
+Left 1
+Front 2
+Left 6
+Left 15
+Right 4
+Back 1
+Back 4
+Front 1
+Back 16
+Back 2
+Left 11
+Front 17
+Right 4
+Right 35
+Right 17
+Front 14
+Front 1
+Right 15
+Back 10
+Front 1
+Back 1
+Left 29
+Right 7
+Right 4
+Left 10
+Left 2

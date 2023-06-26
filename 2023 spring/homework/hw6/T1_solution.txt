@@ -1,0 +1,194 @@
+type: objective
+answers:
+  '2':
+    D: 5
+  '3':
+    D: 5
+  '4':
+    B,D: 5
+    D,B: 5
+  '5':
+    C,D: 5
+    D,C: 5
+  '6':
+    B,D: 5
+    D,B: 5
+  '7':
+    A,B,C,D: 5
+    A,B,D,C: 5
+    A,C,B,D: 5
+    A,C,D,B: 5
+    A,D,B,C: 5
+    A,D,C,B: 5
+    B,A,C,D: 5
+    B,A,D,C: 5
+    B,C,A,D: 5
+    B,C,D,A: 5
+    B,D,A,C: 5
+    B,D,C,A: 5
+    C,A,B,D: 5
+    C,A,D,B: 5
+    C,B,A,D: 5
+    C,B,D,A: 5
+    C,D,A,B: 5
+    C,D,B,A: 5
+    D,A,B,C: 5
+    D,A,C,B: 5
+    D,B,A,C: 5
+    D,B,C,A: 5
+    D,C,A,B: 5
+    D,C,B,A: 5
+  '8':
+    C,D: 5
+    D,C: 5
+  '9':
+    A,B,E: 5
+    A,E,B: 5
+    B,A,E: 5
+    B,E,A: 5
+    E,A,B: 5
+    E,B,A: 5
+  '10':
+    B,C,F: 5
+    B,F,C: 5
+    C,B,F: 5
+    C,F,B: 5
+    F,B,C: 5
+    F,C,B: 5
+  '12':
+    C,D: 5
+    D,C: 5
+  '13':
+    A,D: 5
+    D,A: 5
+  '14':
+    D,E: 5
+    E,D: 5
+  '15':
+    B,D,E: 5
+    B,E,D: 5
+    D,B,E: 5
+    D,E,B: 5
+    E,B,D: 5
+    E,D,B: 5
+  '16':
+    A,C,D: 5
+    A,D,C: 5
+    C,A,D: 5
+    C,D,A: 5
+    D,A,C: 5
+    D,C,A: 5
+  '17':
+    B,D,E: 5
+    B,E,D: 5
+    D,B,E: 5
+    D,E,B: 5
+    E,B,D: 5
+    E,D,B: 5
+  '18':
+    C,D: 5
+    D,C: 5
+  '19':
+    A,C,D: 5
+    A,D,C: 5
+    C,A,D: 5
+    C,D,A: 5
+    D,A,C: 5
+    D,C,A: 5
+  '101':
+    .push_back(word): 2.5
+    .emplace_back(word): 2.5
+    .push_back(std::move(word)): 2.5
+    .emplace_back(std::move(word)): 2.5
+  '102':
+    const auto&word:wordList: 2.5
+    'const auto&word: wordList': 2.5
+    const auto&word :wordList: 2.5
+    'const auto&word : wordList': 2.5
+    const auto &word:wordList: 2.5
+    'const auto &word: wordList': 2.5
+    const auto &word :wordList: 2.5
+    'const auto &word : wordList': 2.5
+    auto const&word:wordList: 2.5
+    'auto const&word: wordList': 2.5
+    auto const&word :wordList: 2.5
+    'auto const&word : wordList': 2.5
+    auto const &word:wordList: 2.5
+    'auto const &word: wordList': 2.5
+    auto const &word :wordList: 2.5
+    'auto const &word : wordList': 2.5
+    const std::string&word:wordList: 2.5
+    'const std::string&word: wordList': 2.5
+    const std::string&word :wordList: 2.5
+    'const std::string&word : wordList': 2.5
+    const std::string &word:wordList: 2.5
+    'const std::string &word: wordList': 2.5
+    const std::string &word :wordList: 2.5
+    'const std::string &word : wordList': 2.5
+    std::string const&word:wordList: 2.5
+    'std::string const&word: wordList': 2.5
+    std::string const&word :wordList: 2.5
+    'std::string const&word : wordList': 2.5
+    std::string const &word:wordList: 2.5
+    'std::string const &word: wordList': 2.5
+    std::string const &word :wordList: 2.5
+    'std::string const &word : wordList': 2.5
+    const auto& word:wordList: 2.5
+    'const auto& word: wordList': 2.5
+    const auto& word :wordList: 2.5
+    'const auto& word : wordList': 2.5
+    const auto & word:wordList: 2.5
+    'const auto & word: wordList': 2.5
+    const auto & word :wordList: 2.5
+    'const auto & word : wordList': 2.5
+    auto const& word:wordList: 2.5
+    'auto const& word: wordList': 2.5
+    auto const& word :wordList: 2.5
+    'auto const& word : wordList': 2.5
+    auto const & word:wordList: 2.5
+    'auto const & word: wordList': 2.5
+    auto const & word :wordList: 2.5
+    'auto const & word : wordList': 2.5
+    const std::string& word:wordList: 2.5
+    'const std::string& word: wordList': 2.5
+    const std::string& word :wordList: 2.5
+    'const std::string& word : wordList': 2.5
+    const std::string & word:wordList: 2.5
+    'const std::string & word: wordList': 2.5
+    const std::string & word :wordList: 2.5
+    'const std::string & word : wordList': 2.5
+    std::string const& word:wordList: 2.5
+    'std::string const& word: wordList': 2.5
+    std::string const& word :wordList: 2.5
+    'std::string const& word : wordList': 2.5
+    std::string const & word:wordList: 2.5
+    'std::string const & word: wordList': 2.5
+    std::string const & word :wordList: 2.5
+    'std::string const & word : wordList': 2.5
+  '1101':
+    A,C,D,E: 5
+    A,C,E,D: 5
+    A,D,C,E: 5
+    A,D,E,C: 5
+    A,E,C,D: 5
+    A,E,D,C: 5
+    C,A,D,E: 5
+    C,A,E,D: 5
+    C,D,A,E: 5
+    C,D,E,A: 5
+    C,E,A,D: 5
+    C,E,D,A: 5
+    D,A,C,E: 5
+    D,A,E,C: 5
+    D,C,A,E: 5
+    D,C,E,A: 5
+    D,E,A,C: 5
+    D,E,C,A: 5
+    E,A,C,D: 5
+    E,A,D,C: 5
+    E,C,A,D: 5
+    E,C,D,A: 5
+    E,D,A,C: 5
+    E,D,C,A: 5
+  '1102':
+    B: 5

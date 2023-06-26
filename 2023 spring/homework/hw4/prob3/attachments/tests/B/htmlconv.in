@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0021)http://brainfuck.org/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>some brainfuck fluff</title><meta name="description" content="Includes a complete language reference, plus my many brainfuck programs and some implementations and commentary."><link rel="icon" href="http://brainfuck.org/favicon.ico"><link rel="shortcut icon" href="http://brainfuck.org/favicon.ico"></head>
+<body background="./some brainfuck fluff_files/col.png" bgcolor="#000000" link="#ff0000" text="#ffffff" vlink="#990000">
+<table><tbody><tr><td height="55"></td></tr><tr><td width="60"></td><td>
+<h2>some brainfuck fluff by <a href="http://brainfuck.org/daniel.png">daniel b cristofani</a></h2>
+<font size="+2"><a href="http://brainfuck.org/brainfuck.html">Reference to the brainfuck language</a>.</font>
+<font size="-3"><br><br></font>
+Please read <font size="+1"><a href="http://brainfuck.org/epistle.html">the Epistle to the Implementors</a></font> before implementing brainfuck,<br>and use <a href="http://brainfuck.org/tests.b">these tests</a> (or the equivalent) after.<font size="-3"><br><br></font>
+<font size="+1"><a href="http://brainfuck.org/intermediate.html">Suggestions for intermediate brainfuck programmers.</a></font>
+<font size="-3"><br><br></font>
+<font size="+1">My brainfuck programs:</font><br>
+(Note: I'm licensing all of these under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+International License</a>. Haven't got around to putting that into all the individual files.)<br>
+<a href="http://brainfuck.org/bsort.b">bsort.b</a>, a bubble sort program<br>
+<a href="http://brainfuck.org/collatz.b">collatz.b</a>, a mathematical function<br>
+<a href="http://brainfuck.org/dbf2c.b">dbf2c.b</a>, a brainfuck-to-C translator<br>
+<a href="http://brainfuck.org/dbfi.b">dbfi.b</a>, a brainfuck interpreter<br>
+<a href="http://brainfuck.org/null.b">null.b</a>, <a href="http://brainfuck.org/392quine.b">392quine.b</a>, <a href="http://brainfuck.org/400quine.b">400quine.b</a>, <a href="http://brainfuck.org/dquine.b">dquine.b</a>; quines (392 may be the shortest real one known)<br>
+<a href="http://brainfuck.org/dvorak.b">dvorak.b</a>, a Dvorak filter for QWERTY keyboards<br>
+<a href="http://brainfuck.org/e.b">e.b</a>, my monsterpiece, which computes the transcendental number e<br>
+<a href="http://brainfuck.org/factorial2.b">factorial2.b</a>, which outputs arbitrarily many factorials much faster than <a href="http://brainfuck.org/factorial.b">factorial.b</a><br>
+<a href="http://brainfuck.org/fib.b">fib.b</a>, which outputs arbitrarily many Fibonacci numbers<br>
+<a href="http://brainfuck.org/golden.b">golden.b</a>, which computes the "golden ratio"<br>
+<a href="http://brainfuck.org/head.b">head.b</a>, which outputs ten lines of its input<br>
+<a href="http://brainfuck.org/impeccable.b">impeccable.b</a>, which outputs a nice mathematical sequence<br>
+<a href="http://brainfuck.org/isort.b">isort.b</a>, an insertion sort program<br>
+<a href="http://brainfuck.org/jabh.b">jabh.b</a>, a borrowed Perl tradition<br>
+<a href="http://brainfuck.org/life.b">life.b</a>, Conway's Game of Life<br>
+<a href="http://brainfuck.org/numwarp.b">numwarp.b</a>, a number...obfuscator? Prettifier? (<a href="http://brainfuck.org/numwarp.png">sample output</a>)<br>
+<a href="http://brainfuck.org/qsort.b">qsort.b</a>, a Quicksort program<br>
+<a href="http://brainfuck.org/random.b">random.b</a>, a random number generator <a href="http://brainfuck.org/random.txt">based on</a> a cellular automaton<br>
+<a href="http://brainfuck.org/rot13.b">rot13.b</a>, an unconcise, template-y rot13<br>
+<a href="http://brainfuck.org/short.b">short.b</a>, an assortment of small programs<br>
+<a href="http://brainfuck.org/sierpinski.b">sierpinski.b</a>, which outputs a Sierpinski triangle<br>
+<a href="http://brainfuck.org/squares.b">squares.b</a>, which outputs square numbers from 0 to 10000<br>
+<a href="http://brainfuck.org/squares2.b">squares2.b</a>, which outputs arbitrarily many squares<br>
+<a href="http://brainfuck.org/thuemorse.b">thuemorse.b</a>, which outputs the Thue-Morse sequence<br>
+<a href="http://brainfuck.org/tictactoe.b">tictactoe.b</a>, which plays tic-tac-toe<br>
+<a href="http://brainfuck.org/utm.b">utm.b</a>, a universal Turing machine<br>
+<a href="http://brainfuck.org/wc.b">wc.b</a>, the standard (line and) word (and character) count utility<br>
+<a href="http://brainfuck.org/xmastree.b">xmastree.b</a>, which outputs an ASCII Christmas tree<br>
+<a href="http://brainfuck.org/notes_on_brainfuck_progs.txt">Brief explanatory comments on most of these programs</a><br>
+<a href="http://www.hevanet.com/cristofd/08.html">Draft</a> of a paper about <a href="http://brainfuck.org/dbfi.b">dbfi.b</a><font size="-3"><br></font><br>
+<font size="+1">My brainfuck implementations:</font><br>
+A <a href="http://brainfuck.org/qdb.c">quick and dirty interpreter</a> in C, or 
+<a href="http://brainfuck.org/qdb.zip">as a Windows executable</a> if you like<br>
+A <a href="http://brainfuck.org/sbi.c">clean and simple, but slow, interpreter</a> in C<br>
+The <a href="http://brainfuck.org/bcci.c">fascist, score-computing interpreter used for BFCC</a><br>
+<a href="http://brainfuck.org/dbc.c">dbc.c</a>, a compiler for Sun machines<br>
+<a href="http://brainfuck.org/di.html">di.html</a>, a tiny slow-ish interpreter in JavaScript<br>
+(made using <a href="https://web.archive.org/web/20081226152221/http://justice.loyola.edu/~mcoffey/pr/5k/">this interpreter</a> as a starting point)<font size="-3"><br></font><br>
+
+<font size="+1">Contest results:</font><br>
+<a href="http://brainfuck.org/results0.txt">The results</a> of Brainfuck Golf contest 0 (text-to-brainfuck)<br>
+<a href="http://brainfuck.org/results1.txt">The results</a> of Golf contest 1 (Von Neumann integers)<br>
+<a href="http://brainfuck.org/results2.txt">The results</a> of Golf contest 2 (sort bytes)<br>
+<a href="http://brainfuck.org/collatz.b">The results</a> of the Brainfuck Texas Holdem contest :/<br>
+<a href="http://brainfuck.org/bfcc1.txt">The results</a> of Brainfuck Component Competition #1 (reverse bytes)<br>
+<a href="http://brainfuck.org/logical.txt">The results</a> of the Logical Brainfuck Competition<br>
+<a href="http://brainfuck.org/golf3.html">The results</a> of, I suppose, Golf contest 3? I won an <a href="http://brainfuck.org/abacus_back.jpg">inscribed</a> <a href="http://brainfuck.org/abacus_front.jpg">abacus</a>.<font size="-3"><br></font><br>
+
+<font size="+1">A few other pages:</font><br>
+<a href="http://www.iwriteiam.nl/Ha_BF.html">Frans Faase's page</a><br>
+<a href="http://www.muppetlabs.com/~breadbox/bf/">Brian Raiter's page</a><br>
+<a href="http://aminet.net/package.php?package=dev/lang/brainfuck-2.lha">Urban M�ller's canonical brainfuck distribution</a><br>
+<a href="http://esoteric.sange.fi/brainfuck/">The brainfuck archive</a>, last updated some years ago<br>
+<br>
+Incidentally, feel free to email me at (my first name) (at) (this domain dot org), and I'll try to respond in a vaguely timely fashion (no promises).<br>
+<br>
+</td></tr></tbody></table>
+
+</body></html>

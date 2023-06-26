@@ -1,0 +1,1 @@
+int checkOneNumber(const int (*board)[9], int row, int col);

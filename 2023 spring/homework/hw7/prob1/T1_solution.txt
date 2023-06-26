@@ -1,0 +1,165 @@
+type: objective
+answers:
+  '2':
+    A,D,F: 5
+    A,F,D: 5
+    D,A,F: 5
+    D,F,A: 5
+    F,A,D: 5
+    F,D,A: 5
+  '3':
+    A,B,D: 5
+    A,D,B: 5
+    B,A,D: 5
+    B,D,A: 5
+    D,A,B: 5
+    D,B,A: 5
+  '4':
+    D,E: 5
+    E,D: 5
+  '5':
+    A,B,C: 5
+    A,C,B: 5
+    B,A,C: 5
+    B,C,A: 5
+    C,A,B: 5
+    C,B,A: 5
+  '6':
+    E: 5
+  '7':
+    A,B,D: 5
+    A,D,B: 5
+    B,A,D: 5
+    B,D,A: 5
+    D,A,B: 5
+    D,B,A: 5
+  '8':
+    B,D: 5
+    D,B: 5
+  '9':
+    B: 5
+  '10':
+    B: 5
+  '11':
+    A,C: 5
+    C,A: 5
+  '12':
+    B,C,D,E: 5
+    B,C,E,D: 5
+    B,D,C,E: 5
+    B,D,E,C: 5
+    B,E,C,D: 5
+    B,E,D,C: 5
+    C,B,D,E: 5
+    C,B,E,D: 5
+    C,D,B,E: 5
+    C,D,E,B: 5
+    C,E,B,D: 5
+    C,E,D,B: 5
+    D,B,C,E: 5
+    D,B,E,C: 5
+    D,C,B,E: 5
+    D,C,E,B: 5
+    D,E,B,C: 5
+    D,E,C,B: 5
+    E,B,C,D: 5
+    E,B,D,C: 5
+    E,C,B,D: 5
+    E,C,D,B: 5
+    E,D,B,C: 5
+    E,D,C,B: 5
+  '13':
+    A,C: 5
+    C,A: 5
+  '14':
+    A,B,C,D: 5
+    A,B,D,C: 5
+    A,C,B,D: 5
+    A,C,D,B: 5
+    A,D,B,C: 5
+    A,D,C,B: 5
+    B,A,C,D: 5
+    B,A,D,C: 5
+    B,C,A,D: 5
+    B,C,D,A: 5
+    B,D,A,C: 5
+    B,D,C,A: 5
+    C,A,B,D: 5
+    C,A,D,B: 5
+    C,B,A,D: 5
+    C,B,D,A: 5
+    C,D,A,B: 5
+    C,D,B,A: 5
+    D,A,B,C: 5
+    D,A,C,B: 5
+    D,B,A,C: 5
+    D,B,C,A: 5
+    D,C,A,B: 5
+    D,C,B,A: 5
+  '15':
+    A: 5
+  '16':
+    A,C,D: 5
+    A,D,C: 5
+    C,A,D: 5
+    C,D,A: 5
+    D,A,C: 5
+    D,C,A: 5
+  '17':
+    A,B,D: 5
+    A,D,B: 5
+    B,A,D: 5
+    B,D,A: 5
+    D,A,B: 5
+    D,B,A: 5
+    A,B: 5
+    B,A: 5
+  '18':
+    C,D: 5
+    D,C: 5
+  '19':
+    B,C,E,G: 5
+    B,C,G,E: 5
+    B,E,C,G: 5
+    B,E,G,C: 5
+    B,G,C,E: 5
+    B,G,E,C: 5
+    C,B,E,G: 5
+    C,B,G,E: 5
+    C,E,B,G: 5
+    C,E,G,B: 5
+    C,G,B,E: 5
+    C,G,E,B: 5
+    E,B,C,G: 5
+    E,B,G,C: 5
+    E,C,B,G: 5
+    E,C,G,B: 5
+    E,G,B,C: 5
+    E,G,C,B: 5
+    G,B,C,E: 5
+    G,B,E,C: 5
+    G,C,B,E: 5
+    G,C,E,B: 5
+    G,E,B,C: 5
+    G,E,C,B: 5
+  '20':
+    A,B,C: 5
+    A,C,B: 5
+    B,A,C: 5
+    B,C,A: 5
+    C,A,B: 5
+    C,B,A: 5
+  '101':
+    int: 1
+  '102':
+    const int: 1
+    int const: 1
+  '103':
+    int: 1
+  '104':
+    const int &: 1
+    int const &: 1
+    const int&: 1
+    int const&: 1
+  '105':
+    int: 1
