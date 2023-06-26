@@ -1,0 +1,139 @@
+type: objective
+answers:
+  '3':
+    A: 10
+  '6':
+    A,B: 10
+    B,A: 10
+  '7':
+    C,D: 10
+    D,C: 10
+  '8':
+    B,C: 10
+    C,B: 10
+  '9':
+    B: 10
+  '10':
+    A,C,D: 10
+    A,D,C: 10
+    C,A,D: 10
+    C,D,A: 10
+    D,A,C: 10
+    D,C,A: 10
+  '101':
+    a.push_back(x): 2
+    a.emplace_back(x): 2
+    a.push_back(x);: 2
+    a.emplace_back(x);: 2
+  '102':
+    a.push_back(std::move(x)): 2
+    a.emplace_back(std::move(x)): 2
+    a.push_back(std::move(x));: 2
+    a.emplace_back(std::move(x));: 2
+  '103':
+    A,B: 2
+    B,A: 2
+  '104':
+    a.emplace_front(p,q,r): 2
+    a.emplace_front(p,q, r): 2
+    a.emplace_front(p, q,r): 2
+    a.emplace_front(p, q, r): 2
+    a.emplace_front(p,q,r);: 2
+    a.emplace_front(p,q, r);: 2
+    a.emplace_front(p, q,r);: 2
+    a.emplace_front(p, q, r);: 2
+  '105':
+    a.clear(): 2
+    a.clear();: 2
+  '201':
+    RandomAccessIterator: 2
+  '202':
+    RandomAccessIterator: 2
+  '203':
+    BidirectionalIterator: 2
+  '204':
+    RandomAccessIterator: 2
+  '205':
+    ForwardIterator: 2
+  '401':
+    B: 2
+  '402':
+    C: 2
+  '403':
+    D: 2
+  '404':
+    D: 2
+  '5011':
+    int: 1
+  '5012':
+    int: 1
+  '5021':
+    std::vector<double>: 1
+    vector<double>: 1
+    std::vector< double >: 1
+    vector< double >: 1
+  '5022':
+    std::vector<std::vector<double>> &: 1
+    std::vector<vector<double>> &: 1
+    vector<std::vector<double>> &: 1
+    vector<vector<double>> &: 1
+    std::vector<std::vector<double>>&: 1
+    std::vector<vector<double>>&: 1
+    vector<std::vector<double>>&: 1
+    vector<vector<double>>&: 1
+    std::vector<std::vector<double> > &: 1
+    std::vector<vector<double> > &: 1
+    vector<std::vector<double> > &: 1
+    vector<vector<double> > &: 1
+    std::vector<std::vector<double> >&: 1
+    std::vector<vector<double> >&: 1
+    vector<std::vector<double> >&: 1
+    vector<vector<double> >&: 1
+    std::vector< std::vector<double> > &: 1
+    std::vector< vector<double> > &: 1
+    vector< std::vector<double> > &: 1
+    vector< vector<double> > &: 1
+    std::vector< std::vector<double> >&: 1
+    std::vector< vector<double> >&: 1
+    vector< std::vector<double> >&: 1
+    vector< vector<double> >&: 1
+    std::vector< std::vector< double > > &: 1
+    std::vector< vector< double > > &: 1
+    vector< std::vector< double > > &: 1
+    vector< vector< double > > &: 1
+    std::vector< std::vector< double > >&: 1
+    std::vector< vector< double > >&: 1
+    vector< std::vector< double > >&: 1
+    vector< vector< double > >&: 1
+  '5031':
+    std::string &: 1
+    string &: 1
+    std::string&: 1
+    string&: 1
+  '5032':
+    std::string &: 1
+    string &: 1
+    std::string&: 1
+    string&: 1
+  '5041':
+    std::string: 1
+    string: 1
+  '5042':
+    std::string &&: 1
+    string &&: 1
+    std::string&&: 1
+    string&&: 1
+  '5051':
+    int *: 1
+    int*: 1
+  '5052':
+    int *: 1
+    int*: 1
+  '5061':
+    int[10]: 1
+    int [10]: 1
+  '5062':
+    int(&)[10]: 1
+    int(&) [10]: 1
+    int (&)[10]: 1
+    int (&) [10]: 1
