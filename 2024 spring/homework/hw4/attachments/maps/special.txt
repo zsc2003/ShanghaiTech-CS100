@@ -1,0 +1,10 @@
+7 18 2
+  RRRRRRRRRRRRRR  
+  R............R  
+RRR 0  BBBB    RRR
+R......B1 B......R
+RRR    BBBB  C RRR
+  R............R  
+  RRRRRRRRRRRRRR  
+up
+left

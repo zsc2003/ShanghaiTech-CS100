@@ -1,0 +1,28 @@
+23 23 4
+BBBBBBBBBBBBBBBBBBBBBBB
+B...B.............B...B
+B.B.B.YYYYY.YYYYY.B.B.B
+B..C....B.....B.......B
+BBB.B.B.B.BBB.B.B.B.BBB
+B...B.B.B.B B.B0B.B...B
+B.B.B.B.B.BBB.B.B.B.B.B
+B...B.B. . . . .B.B...B
+YYYYY.B.GGGGGGG.B.YYYYY
+B.....B..1......B.....B
+B YYYYY.BBB BBB.YYYYY B
+........B     B........
+B YYYYY.GGGGGGG.YYYYY B
+B.....B.........B.....B
+YYYYY.B.GGGGGGG.B.YYYYY
+B...B2B. . . . .B.B...B
+B.B.B.B.B.BBB.B.B.B.B.B
+B...B.B.B.B B.B.B.B...B
+BBB.B.B.B.BBB.B.B.B.BBB
+B.......B.....B....3..B
+B.B.B.YYYYY.YYYYY.B.B.B
+B...B.............B...B
+BBBBBBBBBBBBBBBBBBBBBBB
+up
+left
+up
+right

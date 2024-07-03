@@ -1,0 +1,15 @@
+11 20 3
+BBBBBBBBBBBBBBBBBBBB
+B....B........B....B
+B.BB.B.BBBBBB.B.BB.B
+B.B..0...........B.B
+B.B.BB.BB  BB.BB.B.B
+B......B    B.....2B
+B.B.BB.BBBBBB.BB.B.B
+B.B......1.......B.B
+B.BB.B.BBBBBB.B.BB.B
+B....B...  C..B....B
+BBBBBBBBBBBBBBBBBBBB
+right
+left
+down
