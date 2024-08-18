@@ -1,0 +1,44 @@
+add_library(
+  Environment
+  STATIC
+  Environment.cpp
+)
+target_link_libraries(
+  Environment
+  Framework
+  GameWorld
+)
+
+add_library(
+  Projectiles
+  STATIC
+  Projectiles.cpp
+)
+target_link_libraries(
+  Projectiles
+  Framework
+  GameWorld
+)
+
+add_library(
+  Plants
+  STATIC
+  Plants.cpp
+)
+target_link_libraries(
+  Plants
+  Framework
+  GameWorld
+  Projectiles
+)
+
+add_library(
+  Zombies
+  STATIC
+  Zombies.cpp
+)
+target_link_libraries(
+  Zombies
+  Framework
+  GameWorld
+)
